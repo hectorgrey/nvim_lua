@@ -28,10 +28,15 @@ vim.opt.mouse = "a"
 -- Neovide Settings
 
 if (vim.g.neovide == true) then
-    vim.opt.guifont = "FiraCode Nerd Font:h8"
     vim.opt.clipboard = "unnamedplus"
     vim.g.neovide_transparency = 0.8
-    vim.g.neovide_fullscreen = true
+    if(vim.loop.os_uname().sysname == "Darwin") then
+        vim.opt.guifont = "FiraCode Nerd Font:h18"
+        vim.g.neovide_fullscreen = false
+    else
+        vim.opt.guifont = "FiraCode Nerd Font:h8"
+        vim.g.neovide_fullscreen = true
+    end
 end
 
 -- Syntax Highlighting

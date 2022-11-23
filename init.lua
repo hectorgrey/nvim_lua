@@ -24,12 +24,13 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.cursorline = true
 vim.opt.mouse = "a"
+--vim.opt.syntax = true
 
 -- Neovide Settings
 
 if (vim.g.neovide == true) then
     vim.opt.clipboard = "unnamedplus"
-    vim.g.neovide_transparency = 0.8
+    vim.g.neovide_transparency = 0.9
     if(vim.loop.os_uname().sysname == "Darwin") then
         vim.opt.guifont = "FiraCode Nerd Font:h18"
         vim.g.neovide_fullscreen = false
@@ -45,4 +46,5 @@ vim.cmd("syntax on")
 
 -- Plugins
 
+require("nvim-tree").setup()
 
